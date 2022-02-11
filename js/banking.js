@@ -6,28 +6,27 @@ const first = doubleIt(5);
 const seocnt = doubleIt(7); */
 
 
-function getInputValue(){
-    const depositeInput = document.getElementById('deposit-input');
-    const depositeAmountText = depositeInput.value;
-    const depositeAmount = parseFloat(depositeAmountText);
+function getInputValue(inputId){
+    const inputField = document.getElementById(inputId);
+    const inputAmountText = inputField.value;
+    const amountValue = parseFloat(inputAmountText);
 
     // Clear input number
-    depositeInput.value = '';
+    inputField.value = '';
     
-    return depositeAmount;
+    return amountValue;
     
 }
 
 
-
-
 document.getElementById('deposit-btn').addEventListener('click', function(){
-    // console.log('Clicked');
-
-/*     const depositeInput = document.getElementById('deposit-input');
+    
+    /*  
+    const depositeInput = document.getElementById('deposit-input');
     const depositeAmountText = depositeInput.value;
-    const depositeAmount = parseFloat(depositeAmountText); */
-    const depositeAmount = getInputValue();
+    const depositeAmount = parseFloat(depositeAmountText);
+    */
+    const depositeAmount = getInputValue('deposit-input');
     // console.log(depositeAmount);
 
 
@@ -53,11 +52,13 @@ document.getElementById('deposit-btn').addEventListener('click', function(){
 
 // Handle withdraw 
 document.getElementById('withdraw-btn').addEventListener('click', function(){
-    // console.log('Clicked');
+
+    /*
     const withdrawInput = document.getElementById('withdraw-input');
     const withdrawAmountText = withdrawInput.value;
-    // console.log(withdrawAmountText);
     const widthdrawAmount = parseFloat(withdrawAmountText);
+    */
+    const widthdrawAmount = getInputValue('withdraw-input');
 
     // Update withdraw total
     const withdrawTotal = document.getElementById('withdraw-total');
@@ -73,7 +74,6 @@ document.getElementById('withdraw-btn').addEventListener('click', function(){
 
     balanceTotal.innerText = previousBalanceTotal - widthdrawAmount;
 
-    // Clear widthdraw input field
-    withdrawInput.value = '';
+    
     
 });
