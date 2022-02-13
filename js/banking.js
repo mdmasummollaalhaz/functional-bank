@@ -17,11 +17,12 @@ function getInputValue(inputId){
     return amountValue;
     
 }
-function updateTotalField(totalFieldId, depositeAmount){
-    const depositTotal = document.getElementById(totalFieldId);
-    const depositeTotalText = depositTotal.innerText;
-    const previousDepositeTotal = parseFloat(depositeTotalText);
-    depositTotal.innerText = previousDepositeTotal + depositeAmount;
+function updateTotalField(totalFieldId, amount){
+    // debugger;
+    const totalElement = document.getElementById(totalFieldId);
+    const depositeTotalText = totalElement.innerText;
+    const previousTotal = parseFloat(depositeTotalText);
+    totalElement.innerText = previousTotal + amount;
 
 }
 
